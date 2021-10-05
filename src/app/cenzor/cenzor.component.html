@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="block">
+    <div class="info">
+      <div class="title">
+        Bad words:
+      </div>
+      <div class="bad_word">
+        <span *ngFor="let word of badWords">{{ word }} &nbsp;</span>
+      </div>
+    </div>
+    <div class="input_btn">
+      <input class="form-control input_word" type="text" placeholder="word here..." [(ngModel)]="input">
+      <button type="button" class="btn btn-warning add" (click)="addBadWord()">Add</button>
+      <button type="button" class="btn btn-danger reset" (click)="resetBadWords()">Reset</button>
+    </div>
+    <div class="err" *ngIf="showError">
+      Заповніть поле!
+    </div>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" [(ngModel)]="textarea"></textarea>
+    <div class="err_textarea" *ngIf="showErrorTextarea">
+      Поле пусте.Заповніть його!
+    </div>
+    <button type="button" class="btn btn-success btn_cenzor" (click)="censor()">Cenzor</button>
+  </div>
+</div>

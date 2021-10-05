@@ -1,0 +1,73 @@
+<div class="container">
+  <div class="width">
+    <h5>login</h5>
+    <div class="form-floating mb-3">
+      <input
+        type="text"
+        class="form-control login"
+        id="floatingInput"
+        placeholder="Enter login"
+        pattern="^\S+[a-zA-Z]{3,16}$"
+        [ngStyle]="{borderColor: loginIsValid ? 'gray' : 'red'}"
+        [(ngModel)]="login"
+      >
+      <label for="floatingInput">Enter login</label>
+    </div>
+    <h5>Password</h5>
+    <div class="form-floating mb-3">
+      <input
+        type="password"
+        class="form-control password"
+        id="floatingPassword"
+        placeholder="Enter password"
+        pattern="^\S{4,16}"
+        [ngStyle]="{borderColor: passwordIsValid ? 'gray' : 'red'}"
+        [(ngModel)]="password"
+      >
+      <label for="floatingPassword">Enter password</label>
+    </div>
+    <h5>Email address</h5>
+    <div class="form-floating mb-3">
+      <input
+        type="email"
+        class="form-control email"
+        id="floatingEmail"
+        placeholder="Enter email"
+        pattern="\S+@\S+\.\S+"
+        #emailInput
+        [ngStyle]="{borderColor: emailIsValid ? 'gray' : 'red'}"
+        [(ngModel)]="email"
+      >
+      <label for="floatingEmail">Enter email</label>
+    </div>
+    <div class="error" *ngIf="error">
+      Заповніть поля вірно!
+    </div>
+    <button type="button" class="btn btn-outline-success btn_add" (click)="addUser()" *ngIf="addState">Add user</button>
+    <button type="button" class="btn btn-info btn_edit_user" *ngIf="!addState" (click)="editUser()">Edit user</button>
+  </div>
+  <div class="width">
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Login</th>
+        <th scope="col">Password</th>
+        <th scope="col">Email</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+      </thead>
+      <tbody class="tbody">
+      <tr *ngFor="let user of users; let i = index">
+        <td>{{i + 1}}</td>
+        <td>{{user.login}}</td>
+        <td>{{user.password}}</td>
+        <td>{{user.email}}</td>
+        <td><button type="button" class="btn btn-warning btn_edit" (click)="setFieldsForEditUser(user, i)">Edit</button></td>
+        <td><button type="button" class="btn btn-danger btn_delete" (click)="deleteUser(i)">Delete</button></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

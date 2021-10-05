@@ -1,0 +1,46 @@
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.block {
+  width: 43%;
+  height: 200px;
+  background-color: #eeeeee;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.info {
+  display: flex;
+}
+
+.title {
+  margin: 0 4px 0;
+  font-weight: 600;
+}
+
+.bad_word {
+  color: red;
+}
+
+.input_btn {
+  display: flex;
+}
+
+.btn_cenzor {
+  width: 100%;
+}
+
+textarea {
+  resize: none;
+}
+
+.err, .err_textarea {
+  color: red;
+  font-weight: 600;
+}
