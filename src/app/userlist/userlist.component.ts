@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+
+interface IUser {
+  login: string
+  password: string
+  email: string
+}
 
 @Component({
   selector: 'app-userlist',
@@ -20,7 +26,6 @@ export class UserlistComponent implements OnInit {
 
   ngOnInit() {
     if (this.emailRef) {
-      console.log(this.emailRef);
       this.emailRef.nativeElement.style.borderColor = 'gray'
     }
   }
@@ -68,12 +73,6 @@ export class UserlistComponent implements OnInit {
     this.login = user.login
     this.password = user.password
     this.email = user.email
-
-    console.log(this.emailRef?.nativeElement.style.borderColor);
-    // login.style.borderColor =
-    //   password.style.borderColor =
-    //     email.style.borderColor = 'gray'
-
     this.editingIndex = index
   }
 

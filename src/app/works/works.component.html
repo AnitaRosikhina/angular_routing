@@ -1,1 +1,25 @@
-<p>works works!</p>
+<div>
+  <ul class="nav nav-tabs d-flex justify-content-between">
+    <div class="d-flex">
+      <div style="line-height: 37px">
+        <a (click)="navigateToTheLastRoute()" class="text-decoration-none">&nbsp;Last works >>> &nbsp;</a>
+      </div>
+      <li class="nav-item">
+        <a routerLinkActive="active" class="nav-link" routerLink="cenzor">Cenzor</a>
+      </li>
+      <li class="nav-item">
+        <a routerLinkActive="active" class="nav-link" routerLink="user-list">Users</a>
+      </li>
+      <li class="nav-item">
+        <a routerLinkActive="active" class="nav-link" routerLink="task-list">Task</a>
+      </li>
+      <li class="nav-item">
+        <a routerLinkActive="active" class="nav-link" routerLink="phonebook">Book</a>
+      </li>
+    </div>
+    <div  style="line-height: 37px">
+      <a routerLink="/" class="link-danger text-decoration-none">Back to >>> Home</a>
+    </div>
+  </ul>
+</div>
+<router-outlet></router-outlet>

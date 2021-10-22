@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin: 50px auto;
+}
+
+.width {
+  width: 48%;
+}
+
+.error {
+  color: red;
+  margin: 0 0 10px;
+}

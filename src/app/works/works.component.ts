@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import {Location} from "@angular/common";
 
 @Component({
   selector: 'app-works',
   templateUrl: './works.component.html',
   styleUrls: ['./works.component.css']
 })
-export class WorksComponent implements OnInit {
+export class WorksComponent {
 
-  constructor() { }
+  constructor(private location: Location) { }
 
-  ngOnInit(): void {
+  navigateToTheLastRoute() {
+    this.location.back();
   }
-
 }
